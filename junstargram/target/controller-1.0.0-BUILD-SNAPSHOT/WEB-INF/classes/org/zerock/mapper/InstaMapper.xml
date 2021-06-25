@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.zerock.mapper.InstaMapper">
+	<!--  ////////////// 회원가입 /////////////// -->
+	<!-- 회원 가입 -->
+	<insert id="register">
+		insert into user(email, id, pw, name) values(#{email}, #{id}, #{pw}, #{name})
+	</insert>
+	
+ 	<!-- 아이디 중복확인 -->
+	<select id="idCheck">
+		select count(*) from user where id=#{id}
+	</select>
+	
+	<!--회원정보 조회 -->
+	<select id="login">
+		select * from user where id=#{id}
+	</select>
+</mapper>
