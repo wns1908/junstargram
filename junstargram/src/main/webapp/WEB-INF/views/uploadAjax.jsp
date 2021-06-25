@@ -57,7 +57,7 @@ $(document).ready(function(){
 		  formData.append("uploadFile", files[i]);
 		}
 		$.ajax({
-		  url: '/uploadAjaxAction',
+		  url: '/insta/uploadAjaxAction',
 		  processData: false,
 		  contentType: false,
 		  data: formData,
