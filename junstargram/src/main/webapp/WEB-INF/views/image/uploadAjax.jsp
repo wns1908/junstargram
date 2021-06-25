@@ -1,32 +1,71 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Ajax를 이용한 파일 업로드</title>
-</head>
-<body>
-	<h1>Upload with Ajax</h1>
-	<!-- 원본 이미지를 보여주는 부분 -->
-	<div class="bigPictureWrapper">
-		<div class='bigPicture'>
-		</div>
-	</div>
-	<div class='uploadDiv'><!-- 첨부파일을 추가하는 부분 -->
-		<input type='file' name='uploadFile' multiple>
-	</div>
-	<div class="uploadResult"><!-- 업로드된 첨부파일에 대한 정보를 보여주는 부분 -->
-		<ul>
-			<!-- 첨부 파일의 정보를 list로 보여준다. -->
-		</ul>
-	</div>
-	<button id='uploadBtn'>Upload</button>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+	
+	<%@ include file="../layout/header.jsp" %>
+
+    <!--사진 업로드페이지 중앙배치-->
+        <main class="uploadContainer">
+           <!--사진업로드 박스-->
+            <section class="upload">
+               
+               <!--사진업로드 로고-->
+                <div class="upload-top">
+                    <a href="${pageContext.request.contextPath}/insta/feed" class="">
+                        <img src="${pageContext.request.contextPath}/resources/images/junsta.png" alt="">
+                    </a>
+                    <p>사진 업로드</p>
+                </div>
+                <!--사진업로드 로고 end-->
+                
+                <!--사진업로드 Form-->
+                <form class="upload-form" method="post" enctype="multipart/form-data" action="${pageContext.request.contextPath}/insta/feed"> <!-- 타입이 하나가 아니다. 2가지 이상 타입 -->
+                    <input type="file" name="file" accept="image/*1" id="input_img">
+                    
+                    <div class="upload-img">
+                        <img alt="" id="img-preview" >
+                    </div>
+                    
+       
+                    <!--사진설명 + 업로드버튼-->
+                    <div class="upload-form-detail">
+                        <input type="text" placeholder="사진설명" name="caption" id="caption">
+                        <input type="text" placeholder="#태그" name="tags">
+                        <button class="cta blue">업로드</button>
+                    </div>
+                    <!--사진설명end-->
+                    
+                </form>
+                <!--사진업로드 Form-->
+            </section>
+            <!--사진업로드 박스 end-->
+        </main>      
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
 	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	crossorigin="anonymous">
 </script>
-<script>
+ <script>
+           $("#input_img").on("change" ,(e) => {
+              let files = e.target.files;
+              let filesArr = Array.prototype.slice.call(files);
+              filesArr.forEach((f) => {
+                 /* 이미지로 시작하는게 아니라면 */
+                 if(!f.type.match("image.*")){
+                    alert("이미지를 등록해야 합니다.");
+                    return;
+                 }
+                 
+                 let reader = new FileReader();
+                 reader.onload = (e) => {
+                    console.log("e.target:"+e.target);
+                    $("#img-preview").attr("src",e.target.result);
+                 }
+                 reader.readAsDataURL(f); // 이 코드 실행시 reader.onload 실행됨.
+              });
+              
+           });
+
 $(document).ready(function(){
 	var regex = new RegExp("(.*?)\.(exe|sh|zip|alz)$");
 	var maxSize = 5242880;	// 5MB

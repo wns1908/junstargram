@@ -51,7 +51,7 @@
                 <div class="name-group">
                 	<%-- ${#id} --%>
                     <h2>id</h2>
-                    <button class="cta" onclick="location.href='/insta/post'">글 쓰 기</button>
+                    <button class="cta" onclick="location.href='/insta/uploadAjax'">글 쓰 기</button>
                     <button class="cta">프로필 편집</button>
                     <button class="modi" onclick="popup('.modal-info')"><i class="fas fa-cog"></i></button>
                 </div>

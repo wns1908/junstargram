@@ -141,6 +141,14 @@ public class instaController {
 	public String feed() throws Exception {
 		return "/image/feed";
 	}
+	@PostMapping("/feed")
+	/*
+	 * @RequestMapping(value="/image/feed", method= {{RequestMethod.GET,
+	 * RequestMethod.POST})
+	 */
+	public String feed1() throws Exception {
+		return "/image/feed";
+	}
 
 	// 검색 화면
 	@GetMapping("/explore")
@@ -155,9 +163,9 @@ public class instaController {
 	}
 
 	// 게시글 쓰기
-	@GetMapping("/post")
+	@PostMapping("/uploadAjax")
 	public String writepost() throws Exception {
-		return "image/upload";
+		return "image/uploadAjax";
 	}
 
 	// 업로드 사진 파일 DB에 입력
@@ -166,7 +174,7 @@ public class instaController {
 	public String uploadAjax() {
 		log.info("uploadAjax");
 		
-		return "/uploadAjax";
+		return "image/uploadAjax";
 	}	
 	
 
