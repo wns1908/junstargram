@@ -21,13 +21,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <!-- Style -->
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/feed.css">
-<link rel="stylesheet" href="/css/explore.css">
-<link rel="stylesheet" href="/css/profile.css">
-<link rel="stylesheet" href="/css/upload.css">
-<link rel="stylesheet" href="/css/profileSetting.css">
-<link rel="shortcut icon" href="/images/insta.svg">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/feed.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/explore.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/profile.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/upload.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/profileSetting.css">
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/junsta.png">
 
 <!-- Fontawesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
@@ -38,22 +38,22 @@
 
 <body>
 	<input type="hidden" id="principal-id" value="${principal.user.id}"/>
-	<input type="hidden" id="principal-username" value="${principal.user.username}"/>
+	<input type="hidden" id="principal-username" value="${principal.user.name}"/>
 	
 	<header class="header">
 		<div class="container">
-			<a href="/image/feed" class="logo">
-				<img src="/images/logo.jpg" alt="">
+			<a href="/insta/feed" class="logo">
+				<img src="${pageContext.request.contextPath}/resources/images/junsta.png" alt="">
 			</a>
 			<nav class="navi">
 				<ul class="navi-list">
-					<li class="navi-item"><a href="/image/feed">
+					<li class="navi-item"><a href="${pageContext.request.contextPath}/insta/feed">
 							<i class="fas fa-home"></i>
 						</a></li>
-					<li class="navi-item"><a href="/image/explore">
+					<li class="navi-item"><a href="${pageContext.request.contextPath}/resources/explore">
 							<i class="far fa-compass"></i>
 						</a></li>
-					<li class="navi-item"><a href="/user/${principal.user.id}">
+					<li class="navi-item"><a href="${pageContext.request.contextPath}/insta/user/${principal.user.id}">
 							<i class="far fa-user"></i>
 						</a></li>
 				</ul>

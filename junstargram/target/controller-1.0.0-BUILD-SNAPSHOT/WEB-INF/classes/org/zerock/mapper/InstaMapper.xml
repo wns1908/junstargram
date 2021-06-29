@@ -3,19 +3,81 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.zerock.mapper.InstaMapper">
+	
+	<resultMap type="org.zerock.user.UserVO" id="UserResultMap">
+		<id property="userNo" column="userNo"/>
+		<result property="email" column="email"/>
+		<result property="id" column="id"/>
+		<result property="pw" column="pw"/>
+		<result property="name" column="name"/>
+		<result property="intro" column="intro"/>
+		<result property="phone" column="phone"/>
+		<result property="regDate" column="regDate"/>
+		
+		<result property="profileName" column="profileName"/>
+		<result property="profileSize" column="profileSize"/>
+		<result property="profileContentType" column="profileContentType"/>
+		<result property="profileData" column="profileData"/>
+	</resultMap>
+	
+	<!-- 게시물 -->
+	<resultMap type="org.zerock.user.PostVO" id="PostResultMap">
+		<id property="postNo" column="postNo"/>
+		<result property="caption" column="caption"/>
+		<result property="regDate" column="regDate"/>
+		<result property="userNo" column="userNo"/>
+		<result property="id" column="id"/>
+		
+		<result property="profileName" column="profileName"/>
+		<result property="profileSize" column="profileSize"/>
+		<result property="profileContentType" column="profileContentType"/>
+		<result property="profileData" column="profileData"/>
+	</resultMap>
 	<!--  ////////////// 회원가입 /////////////// -->
 	<!-- 회원 가입 -->
+	
 	<insert id="register">
 		insert into user(email, id, pw, name) values(#{email}, #{id}, #{pw}, #{name})
 	</insert>
 	
  	<!-- 아이디 중복확인 -->
-	<select id="idCheck">
+	<select id="idCheck" resultType="int">
+		<![CDATA[
 		select count(*) from user where id=#{id}
+		]]>
 	</select>
 	
 	<!--회원정보 조회 -->
-	<select id="login">
-		select * from user where id=#{id}
+	<select id="login" resultType="String">
+		select pw from user where id=#{id}
+	</select>
+	
+	<!-- 게시물 등록과 파일 첨부 -->
+	<insert id="insertPost">
+		insert into posts(caption, userNo, uuid, fileName, filePath, uploadPath) values(#{caption}, #{uesrNo}, #{uuid}, #{fileName}, #{filePath}, #{uploadPath]})
+	</insert>
+	
+	<!-- 모든 게시물 조회 SQL --> 
+	<select id="selectPostLiest" resultMap="PostResultMap"> 
+		<![CDATA[
+			select postNo,
+				caption,
+				regDate,
+				P.userNo as userNo,
+				uuid, fileName,
+				filePath,
+				uploadPath,
+				I.fileName, as fileName
+			from posts P
+			left outer join userImg I
+			on (P.userNo = I.userNo)
+			where postNo > 0
+			order by postNo desc;
+		]]>
+	</select>
+	
+	<!-- 파일 조회 -->
+	<select id="getFile">
+		select * from posts where postNo = #{postNo}
 	</select>
 </mapper>

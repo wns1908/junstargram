@@ -97,7 +97,7 @@
         </section>
     </main>
     
-     <script src="/js/profile.js"></script>
+     <script src="${pageContext.request.contextPath}/resources//js/profile.js"></script>
     
     <!-- <script>
     	$("#btn_update").on("click", (e)=>{

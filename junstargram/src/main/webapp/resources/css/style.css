@@ -29,6 +29,35 @@ a {
   justify-content: center;
   align-items: center;
 }
+.mail_check_wrap {
+	margin-top: 20px;
+}
+.mail_check_input_box{
+	border: 1px solid black;
+	height: 31px;
+	padding: 10px 14px;
+	width: 40%;
+	float: left;
+}
+#mail_check_input_box_false{
+	background-color:#ebebe4;
+}
+#mail_check_input_box_true{
+	background-color:white;
+}
+.mail_check_button{
+	border: 1px solid black;
+	heigth: 51px;
+	width: 30%;
+	float: right;
+	font-size: 5px
+}
+.correct{
+	color : green;
+}
+.incorrect{
+	color : red;
+}
 
 .login__img {
   position: relative;
@@ -54,7 +83,7 @@ a {
 .login__form,
 .login__register {
   padding: 10px 0 20px;
-  text-align: center;
+  text-align: right;
   border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
   background-color: #fff;
 }

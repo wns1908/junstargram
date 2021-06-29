@@ -81,37 +81,37 @@
             <div id="tab-1-content" class="tab-content-item show">
                 <div class="tab-1-content-inner">
                     <div class="img-box">
-                        <a href=""><img src="images/profile.jpeg" alt=""></a>
+                        <a href=""><img src="${pageContext.request.contextPath}/resources/images/macho.jpg" alt=""></a>
                         <div class="comment">
                             <a href="#a" class=""><i class="fas fa-heart"></i><span>36</span></a>
                         </div>
                     </div>
                     <div class="img-box">
-                        <a href=""><img src="images/profile.jpeg" alt=""></a>
+                        <a href=""><img src="${pageContext.request.contextPath}/resources/images/macho.jpg" alt=""></a>
                         <div class="comment">
                             <a href="#a" class=""><i class="fas fa-heart"></i><span>36</span></a>
                         </div>
                     </div>
                     <div class="img-box">
-                        <a href=""><img src="images/profile.jpeg" alt=""></a>
+                        <a href=""><img src="${pageContext.request.contextPath}/resources/images/macho.jpg" alt=""></a>
                         <div class="comment">
                             <a href="#a" class=""><i class="fas fa-heart"></i><span>36</span></a>
                         </div>
                     </div>
                     <div class="img-box">
-                        <a href=""><img src="images/profile.jpeg" alt=""></a>
+                        <a href=""><img src="${pageContext.request.contextPath}/resources/images/macho.jpg" alt=""></a>
                         <div class="comment">
                             <a href="#a" class=""><i class="fas fa-heart"></i><span>36</span></a>
                         </div>
                     </div>
                     <div class="img-box">
-                        <a href=""><img src="images/profile.jpeg" alt=""></a>
+                        <a href=""><img src="${pageContext.request.contextPath}/resources/images/macho.jpg" alt=""></a>
                         <div class="comment">
                             <a href="#a" class=""><i class="fas fa-heart"></i><span>36</span></a>
                         </div>
                     </div>
                     <div class="img-box">
-                        <a href=""><img src="images/profile.jpeg" alt=""></a>
+                        <a href=""><img src="${pageContext.request.contextPath}/resources/images/macho.jpg" alt=""></a>
                         <div class="comment">
                             <a href="#a" class=""><i class="fas fa-heart"></i><span>36</span></a>
                         </div>
@@ -166,56 +166,56 @@
             </div>
             <div class="follower-list">
                 <div class="follower__item">
-                    <div class="follower__img"><img src="images/profile.jpeg" alt=""></div>
+                    <div class="follower__img"><img src="${pageContext.request.contextPath}/resources/images/macho.jpg" alt=""></div>
                     <div class="follower__text">
                         <h2>���대��</h2>
                     </div>
                     <div class="follower__btn"><button onclick="clickFollow(this)">援щ��痍⑥��</button></div>
                 </div>
                 <div class="follower__item">
-                    <div class="follower__img"><img src="images/profile.jpeg" alt=""></div>
+                    <div class="follower__img"><img src="${pageContext.request.contextPath}/resources/images/macho.jpg" alt=""></div>
                     <div class="follower__text">
                         <h2>���대��</h2>
                     </div>
                     <div class="follower__btn"><button onclick="clickFollow(this)">援щ��痍⑥��</button></div>
                 </div>
                 <div class="follower__item">
-                    <div class="follower__img"><img src="images/profile.jpeg" alt=""></div>
+                    <div class="follower__img"><img src="${pageContext.request.contextPath}/resources/images/macho.jpg" alt=""></div>
                     <div class="follower__text">
                         <h2>���대��</h2>
                     </div>
                     <div class="follower__btn"><button onclick="clickFollow(this)">援щ��痍⑥��</button></div>
                 </div>
                 <div class="follower__item">
-                    <div class="follower__img"><img src="images/profile.jpeg" alt=""></div>
+                    <div class="follower__img"><img src="${pageContext.request.contextPath}/resources/images/macho.jpg" alt=""></div>
                     <div class="follower__text">
                         <h2>���대��</h2>
                     </div>
                     <div class="follower__btn"><button onclick="clickFollow(this)">援щ��痍⑥��</button></div>
                 </div>
                 <div class="follower__item">
-                    <div class="follower__img"><img src="images/profile.jpeg" alt=""></div>
+                    <div class="follower__img"><img src="${pageContext.request.contextPath}/resources/images/macho.jpg" alt=""></div>
                     <div class="follower__text">
                         <h2>���대��</h2>
                     </div>
                     <div class="follower__btn"><button onclick="clickFollow(this)">援щ��痍⑥��</button></div>
                 </div>
                 <div class="follower__item">
-                    <div class="follower__img"><img src="images/profile.jpeg" alt=""></div>
+                    <div class="follower__img"><img src="${pageContext.request.contextPath}/resources/images/macho.jpg" alt=""></div>
                     <div class="follower__text">
                         <h2>���대��</h2>
                     </div>
                     <div class="follower__btn"><button onclick="clickFollow(this)">援щ��痍⑥��</button></div>
                 </div>
                 <div class="follower__item">
-                    <div class="follower__img"><img src="images/profile.jpeg" alt=""></div>
+                    <div class="follower__img"><img src="${pageContext.request.contextPath}/resources/images/macho.jpg" alt=""></div>
                     <div class="follower__text">
                         <h2>���대��</h2>
                     </div>
                     <div class="follower__btn"><button onclick="clickFollow(this)">援щ��痍⑥��</button></div>
                 </div>
                 <div class="follower__item">
-                    <div class="follower__img"><img src="images/profile.jpeg" alt=""></div>
+                    <div class="follower__img"><img src="${pageContext.request.contextPath}/resources/images/macho.jpg" alt=""></div>
                     <div class="follower__text">
                         <h2>���대��</h2>
                     </div>
@@ -226,7 +226,7 @@
         </div>
     </div>
 
-    <script src="js/profile.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/profile.js"></script>
 </body>
 
 </html>

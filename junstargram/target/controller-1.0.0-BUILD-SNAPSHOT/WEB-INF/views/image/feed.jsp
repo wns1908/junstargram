@@ -9,9 +9,9 @@
 		</article>
 	</section>
 </main>
-<script src="../js/image.js"></script>
-<script src="../js/comment.js"></script>
-<script src="../js/like.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/image.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/comment.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/like.js"></script>
 
 </body>
 </html>

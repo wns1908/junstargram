@@ -54,7 +54,7 @@
 	
 	<!-- 게시물 등록과 파일 첨부 -->
 	<insert id="insertPost">
-		insert into posts(caption, userNo, id, profileName, profileSize, profileContentType, profileData) values(#{caption}, #{uesrNo}, #{id}, #{profileName}, #{profileSize}, #{profileContentType}, #{profileData})
+		insert into posts(caption, userNo, uuid, fileName, filePath, uploadPath) values(#{caption}, #{uesrNo}, #{uuid}, #{fileName}, #{filePath}, #{uploadPath]})
 	</insert>
 	
 	<!-- 모든 게시물 조회 SQL --> 
@@ -64,11 +64,10 @@
 				caption,
 				regDate,
 				P.userNo as userNo,
-				id, profileName,
-				profileSize,
-				profileContentType,
-				profileData,
-				I.profileName, as profileName
+				uuid, fileName,
+				filePath,
+				uploadPath,
+				I.fileName, as fileName
 			from posts P
 			left outer join userImg I
 			on (P.userNo = I.userNo)

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -25,11 +27,13 @@
                         <h1><img src="${pageContext.request.contextPath}/resources/images/junsta.png" alt=""></h1>
                         
                         <!--로그인 인풋-->
-                        <form class="login__input" action="/login" method="post">
-                            <input type="text" name="username" placeholder="유저네임">
-                            <input type="password" name="password" placeholder="비밀번호">
-                            <button>로그인</button>
+                        <c:if test="${user == null}">
+                        <form class="login__input" action="/insta/login" method="post" id="loginFrm">
+                            <input type="text" name="id" id="id" placeholder="아이디">
+                            <input type="password" name="pw" id="pw" placeholder="비밀번호">
+                            <button type="submit" id="loginUp">로그인</button>
                         </form>
+                        </c:if>
                         <!--로그인 인풋end-->
                         
                         <!-- 또는 -->
@@ -66,5 +70,22 @@
         
     </div>
 </body>
-
+<!-- <script type="text/javascript">
+    $(document).ready(function(e){
+        var idx = false;
+        $('#loginUp').click(function(){
+            if($.trim($('#id').val()) == ''){
+                alert("아이디 입력");
+                $('#id').focus();
+                return;
+            } else if($.trim($('#pw').val()) == ''){
+                alert("패스워드 입력");
+                $('#pw').focus();
+                return;
+            } else {
+                $('#loginFrm').submit();
+            }
+        });
+    });
+</script> -->
 </html>
